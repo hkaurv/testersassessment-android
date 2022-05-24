@@ -1,5 +1,9 @@
 package com.abnamro.apps.referenceandroid.tests;
 
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
@@ -19,27 +23,28 @@ public class HomeScreenTest extends BaseTest {
 
         @Test
         @SmokeTest
-        public void verifyHomeScreenText() {
-            homescreen.homeScreenText_check();
+        public void givenAppIsLaunched_homeScreenIsDisplayed() {
+            homeScreen.homescreenView.check(matches(isDisplayed()));
         }
 
         @Test
-        public void verifyUserCanClickOnOverflowMenu() {
-
+        public void whenUserClickOnOverflowMenu_settingsIsDisplayed() {
             homescreen.clickOverflowMenu();
+            homeScreen.settings.check(matches(isDisplayed()));
         }
 
         @Test
         @SmokeTest
-        public void verifyUserCanClickOnSettings() {
+        public void whenUserClicksOnSettings_settingsDisappear() {
         homescreen.clickOverflowMenu();
         homescreen.clickSettings();
+        homeScreen.overFlowMenu.check(matches(isDisplayed()));
         }
 
         @Test
-        public void verifySnackbarOnClickingFloatingIcon() {
-            homescreen.floatingButtonHomescreen_tap();
-            homescreen.verifySnackBarText();
+        public void whenUserTapFloatingButton_snakbarIsDisplayed() {
+            homescreen.tap_floatingButtonHomescreen();
+            homeScreen.snackBartext.check(matches(withText(homeScreen.snackBarText)));
         }
     }
 
