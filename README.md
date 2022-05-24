@@ -49,19 +49,18 @@ Assuming whatever I see on the app is intended and as per the requirements.
 
 I have tried to keep the tests as simple and understandable as possible.
 Four main tests are written here - 
-###### 1-verifyHomeScreenText()
-Verify that when the user lands on Homescreen, correct(Intended) text is displayed.
+###### 1-givenAppIsLaunched_homeScreenIsDisplayed()
+As the app is launched and user lands on the homescreen, he verifies correct(Intended) text is displayed.
 
+###### 2-whenUserClickOnOverflowMenu_settingsIsDisplayed()
+The user should be able to click on the overflow menu and settings should be displayed.
 
-###### 2-verifySnackbarOnClickingFloatingIcon()
-The user should be able to click on the Fab icon present on the home screen and hence verify correct snacker message is displayed.
+###### 3-whenUserClicksOnSettings_settingsDisappear()
+As the user clicks on the settings,settings disappear and overflow menu is displayed.
 
-###### 3-verifyUserCanClickOnOverflowMenu()
-The user should be able to click on the overflow menu.
+###### 4-whenUserTapFloatingButton_snakbarIsDisplayed()
+As the user tap on floating button, snackbar is displayed and he should be able to verify snackbar text.
 
-###### 4-verifyUserCanClickOnSettings()
-The user should be able to click on Settings from the overflow menu.
- 
 
 ## Executing Test Cases
 
@@ -79,6 +78,17 @@ Run this class with the Run icon present before the class.
 ## Test results 
 HTML test result files: _path_to_your_project/module_name/build/reports/androidTests/connected/_ directory.
 
+## Run Test on CI Pipeline
+
+- Add stage ('Instrumental Test') to JenkinsFile
+
+ stage('test'){
+            steps {
+                sh "$ADB start-server"
+                sh "./gradlew connectedAndroidTest"
+                
+ - Also,You can use the Gradle plugin as part of a Jenkins CI controlled job.
+ 
 
 ## Learnings
 
