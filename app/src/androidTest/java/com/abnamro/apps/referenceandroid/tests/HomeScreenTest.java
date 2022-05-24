@@ -2,10 +2,12 @@ package com.abnamro.apps.referenceandroid.tests;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+
 import com.abnamro.apps.referenceandroid.screens.homeScreen;
 import com.abnamro.apps.referenceandroid.utils.SmokeTest;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 /* HomeScreen class contains UI instrumented tests for ReferenceAndroid App
 that verifies UI elements and their behavior correctness
@@ -23,7 +25,8 @@ public class HomeScreenTest extends BaseTest {
 
         @Test
         public void verifyUserCanClickOnOverflowMenu() {
-        homescreen.clickOverflowMenu();
+
+            homescreen.clickOverflowMenu();
         }
 
         @Test
