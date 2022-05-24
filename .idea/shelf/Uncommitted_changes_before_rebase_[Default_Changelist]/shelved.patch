@@ -1,0 +1,18 @@
+Index: app/src/androidTest/java/com/abnamro/apps/referenceandroid/tests/HomeScreenTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abnamro.apps.referenceandroid.tests;\n\nimport androidx.test.ext.junit.runners.AndroidJUnit4;\nimport androidx.test.filters.LargeTest;\n\nimport com.abnamro.apps.referenceandroid.screens.homeScreen;\nimport com.abnamro.apps.referenceandroid.utils.SmokeTest;\n\nimport org.junit.Test;\nimport org.junit.runner.RunWith;\n\n/* HomeScreen class contains UI instrumented tests for ReferenceAndroid App\nthat verifies UI elements and their behavior correctness\n */\n@LargeTest\n@RunWith(AndroidJUnit4.class)\npublic class HomeScreenTest extends BaseTest {\n    homeScreen homescreen = new homeScreen();\n\n        @Test\n        @SmokeTest\n        public void verifyHomeScreenText() {\n            homescreen.homeScreenText_check();\n        }\n\n        @Test\n        public void verifyUserCanClickOnOverflowMenu() {\n\n            homescreen.clickOverflowMenu();\n        }\n\n        @Test\n        @SmokeTest\n        public void verifyUserCanClickOnSettings() {\n        homescreen.clickOverflowMenu();\n        homescreen.clickSettings();\n        }\n\n        @Test\n        public void verifySnackbarOnClickingFloatingIcon() {\n            homescreen.floatingButtonHomescreen_tap();\n            homescreen.verifySnackBarText();\n        }\n    }\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/abnamro/apps/referenceandroid/tests/HomeScreenTest.java b/app/src/androidTest/java/com/abnamro/apps/referenceandroid/tests/HomeScreenTest.java
+--- a/app/src/androidTest/java/com/abnamro/apps/referenceandroid/tests/HomeScreenTest.java	(revision 11adedd09053fc51e3a173e8ba72697fb1ec1a51)
++++ b/app/src/androidTest/java/com/abnamro/apps/referenceandroid/tests/HomeScreenTest.java	(date 1653404489746)
+@@ -25,7 +25,6 @@
+ 
+         @Test
+         public void verifyUserCanClickOnOverflowMenu() {
+-
+             homescreen.clickOverflowMenu();
+         }
+ 
