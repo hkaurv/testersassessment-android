@@ -62,19 +62,6 @@ The user should be able to click on the overflow menu.
 ###### 4-verifyUserCanClickOnSettings()
 The user should be able to click on Settings from the overflow menu.
  
-However, there can be more tests that can be performed to check the usability of the app and also the performance-
-
-For instance, 
-
-- Taking the app to the background and bringing it to the foreground while still on the home screen.
-
-- Change the screen orientations and perform the tests.
-
-- Checking for crashes by clicking on the fab icon a few times or any other element on the screen.
-
-- Verifying the app name.
-
-- Running tests on multiple devices.
 
 ## Executing Test Cases
 
